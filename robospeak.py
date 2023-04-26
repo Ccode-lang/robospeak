@@ -77,15 +77,20 @@ def FromNums(numarray):
 class NotDivisibleBy4(Exception):
     pass
 
+class NotRobo(Exception):
+    pass
+
 def ToNum(string):
     if string.strip() == "beep":
         return 0
-    if string.strip() == "boop":
+    elif string.strip() == "boop":
         return 1
-    if string.strip() == "bop":
+    elif string.strip() == "bop":
         return 2
-    if string.strip() == "bleep":
+    elif string.strip() == "bleep":
         return 3
+    else:
+        raise NotRobo
 
 def ToNums(string):
     RetVal = []
